@@ -1,0 +1,35 @@
+name: burhanudeen_abdullah
+
+on: 
+  push: 
+    branches: ["main"]
+
+
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    steps: 
+      - name: trying to update my machine
+        run: sudo apt-get update
+
+      - name: install nginx 
+        run: sudo apt-get install nginx 
+
+      - name: sudo systemctl start nginx
+        run: sudo systemctl start nginx
+
+      - name: going to check the status of nginx
+        run: sudo nginx -t 
+
+      - name: install ufw
+        run: sudo apt-get install ufw
+
+      - name: sudo ufw allow 'Nginx Full'
+        run: sudo ufw allow 80/tcp
+
+
+ 
+    
+    
