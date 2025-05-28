@@ -1,0 +1,15 @@
+name: trying
+
+on:
+  push:
+    branches:
+      - main
+
+
+  jobs: 
+    test:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name : trying to use ls to try
+        - run: ls
