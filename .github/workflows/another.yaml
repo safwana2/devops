@@ -30,6 +30,9 @@ jobs:
         run: sudo ufw allow 80/tcp
 
       - name: create a file in the root directory
+
+      - name: going to change the permissions of the file
+        run: sudo chmod 777 /var/www/html/index.html
         run: sudo echo "Hello World" > /var/www/html/index.html
 
       - name: am going to upload the file to the server
