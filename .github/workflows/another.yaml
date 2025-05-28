@@ -13,7 +13,7 @@ jobs:
     steps: 
        
       - uses: actions/checkout@v4
-      
+
       - name: trying to update my machine
         run: sudo apt-get update
 
@@ -47,7 +47,19 @@ jobs:
           name: index.html
           path: /var/www/html/index.html
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: download the file
+        uses: actions/download-artifact@v4
+        with:
+          name: index.html
+          path: /var/www/html/index.html
 
+      - name: cat the file
+        run: cat index.html
+        
  
     
     
