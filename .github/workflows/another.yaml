@@ -30,7 +30,13 @@ jobs:
         run: sudo ufw allow 80/tcp
 
       - name: create a file in the root directory
-        run: echo "Hello World" > /var/www/html/index.html
+        run: sudo echo "Hello World" > /var/www/html/index.html
+
+      - name: am going to upload the file to the server
+        use: actions/upload-artifact@v4
+        with:
+          name: index.html
+          path: /var/www/html/index.html
 
 
  
