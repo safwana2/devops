@@ -33,6 +33,8 @@ jobs:
 
       - name: going to change the permissions of the file
         run: sudo chmod 777 /var/www/html/index.html
+        
+      - name: changing the permissions of the file
         run: sudo echo "Hello World" > /var/www/html/index.html
 
       - name: am going to upload the file to the server
