@@ -1,17 +1,17 @@
-name: trying
+name: "trying"
 
 on:
   push:
     branches:
-      - main
+      - "main"
     
 
 
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest"
 
     steps:
-      - name: trying to use ls to try
-        - run: ls
+      - name: "trying to use ls to try"
+        - run: "ls"
