@@ -11,6 +11,9 @@ jobs:
   
     runs-on: ubuntu-latest
     steps: 
+       
+      - uses: actions/checkout@v4
+      
       - name: trying to update my machine
         run: sudo apt-get update
 
@@ -29,14 +32,15 @@ jobs:
       - name: sudo ufw allow 'Nginx Full'
         run: sudo ufw allow 80/tcp
 
-      - name: create a file in the root directory
+      - name: cd into the root directory
+        run: cd /var/www/html
+      
+      - name: create a file
+        run: echo "Hello World" > index.html
 
-      - name: going to change the permissions of the file
-        run: sudo chmod 777 /var/www/html/index.html
-        
-      - name: changing the permissions of the file
-        run: sudo echo "Hello World" > /var/www/html/index.html
-
+      - name: change file mode
+        run: sudo chmod 777 index.html
+      
       - name: am going to upload the file to the server
         use: actions/upload-artifact@v4
         with:
