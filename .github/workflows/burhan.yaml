@@ -1,0 +1,43 @@
+name : trying again
+
+on:
+  push:
+    branches: ["main"]
+  
+
+
+jobs:
+  build:
+    run-on: ubuntu-latest
+
+    steps:
+      - name: update
+        run: sudo apt update && sudo apt uprade
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: create a file
+        run: touch burhan.txt
+
+      - name: add content to the file
+        run: echo "burhan is a good boy" >> burhan.tx
+        
+      - name: upload the file 
+        uses: actions/upload-artifact@v4
+        with:
+          name: burhan.txt
+          path: burhan.txt
+  
+
+  deploy:
+    needs: build
+    run-on: ubuntu-latest
+
+    steps:
+      - name: download the file
+        uses: actions/download-artifact@v4
+
+      - name: print the file
+        run: cat burhan.txt
+          
+      
+        
