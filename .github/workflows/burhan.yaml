@@ -28,7 +28,7 @@ jobs:
           path: burhan.txt
   
 
-  deploy:
+    deploy:
     needs: build
     run-on: ubuntu-latest
 
@@ -38,7 +38,7 @@ jobs:
 
       - name: print the file
         run: cat burhan.txt
-        
+
           
       
         
