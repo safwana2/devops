@@ -43,8 +43,8 @@ jobs:
     - name: Docker login and Docker Run
       env:  #remove this 👈
         CONTAINER_REGISTRY: docker.io
-        DOCKER_USERNAME: getdzidon
-        DOCKER_PASSWORD: PrintTest!243!
+        DOCKER_USERNAME: safwana12
+        DOCKER_PASSWORD: Burhan123
       # DOCKER_HUB_TOKEN: NB8E7Bggft6GJBYbbgt655GGu77
         IMAGE_NAME: e-com-app
       run: |
